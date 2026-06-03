@@ -873,7 +873,7 @@ export default function App() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="tel:+38641000000"
+              href="tel:+38630555001"
               className="flex items-center gap-2.5 bg-white text-orange-600 hover:bg-orange-50 font-bold px-7 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <Phone className="w-4.5 h-4.5" />
@@ -1049,7 +1049,7 @@ export default function App() {
                         name="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+386 41 000 000"
+                        placeholder="+386 30 555 001"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm transition-all"
                       />
                     </div>
@@ -1192,7 +1192,7 @@ export default function App() {
               </div>
               <div className="font-bold text-white text-sm mb-4 mt-6">Kontakt</div>
               <div className="space-y-3 text-sm">
-                <a href="tel:+38641000000" className="flex items-center gap-2.5 hover:text-orange-400 transition-colors">
+                <a href="tel:+38630555001" className="flex items-center gap-2.5 hover:text-orange-400 transition-colors">
                   <Phone className="w-4 h-4 text-orange-500" />
                   +386 30 555 001
                 </a>

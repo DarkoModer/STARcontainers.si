@@ -200,9 +200,9 @@ export default function SeoCityPage() {
               <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
                 <h3 className="font-bold mb-4">Povpraševanje za {city.name}</h3>
                 <div className="space-y-3 text-sm">
-                  <a href="tel:+38641000000" className="flex items-center gap-2.5 text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">
+                  <a href="tel:+38630555001" className="flex items-center gap-2.5 text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">
                     <Phone className="w-4 h-4 text-orange-500" />
-                    +386 41 000 000
+                    +386 30 555 001
                   </a>
                   <a href="mailto:info@starcontainers.si" className="flex items-center gap-2.5 text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">
                     <Mail className="w-4 h-4 text-orange-500" />
@@ -340,9 +340,9 @@ export default function SeoCityPage() {
               Pošlji povpraševanje
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="tel:+38641000000" className="flex items-center gap-2 bg-black/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-full hover:bg-black/30 transition-all hover:-translate-y-0.5">
+            <a href="tel:+38630555001" className="flex items-center gap-2 bg-black/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-full hover:bg-black/30 transition-all hover:-translate-y-0.5">
               <Phone className="w-4 h-4" />
-              +386 41 000 000
+              +386 30 555 001
             </a>
           </div>
         </div>
