@@ -823,7 +823,7 @@ export default function App() {
                     <Truck className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Depo Slovenija (Ptuj)</h3>
+                    <h3 className="font-bold mb-1">Depo Slovenija (Koper, Ptuj)</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       Strateška lokacija v Ptuju za hitro dostavo po vsej Sloveniji.
                       Dostava v 48 urah.
