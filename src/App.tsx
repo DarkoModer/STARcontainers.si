@@ -1105,9 +1105,10 @@ export default function App() {
                     />
                   </div>
                   {submitStatus === 'error' && (
-                    <p className="text-sm text-red-500 text-center">
-                      Napaka pri pošiljanju. Prosimo pokličite nas na +386 30 555 001.
-                    </p>
+                    <div className="text-sm text-red-500 text-center bg-red-50 dark:bg-red-950/20 p-3 rounded-lg border border-red-200 dark:border-red-900/30">
+                      <p className="mb-2">Napaka pri pošiljanju povpraševanja.</p>
+                      <p className="text-xs">Prosimo pokličite nas na <a href="tel:+38630555001" className="font-semibold hover:underline">+386 30 555 001</a> ali napišite na <a href="mailto:info@starcontainers.si" className="font-semibold hover:underline">info@starcontainers.si</a></p>
+                    </div>
                   )}
                   <button
                     type="submit"
