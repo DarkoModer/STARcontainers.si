@@ -1104,9 +1104,9 @@ export default function App() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm transition-all"
                     >
                       <option value="">-- Izberite tip --</option>
-                      <option>Nakup kontejnerja 20ft</option>
-                      <option>Nakup kontejnerja 40ft</option>
-                      <option>Prevoz</option>
+                      <option>Nakup kontejnerja</option>
+                      <option>Izposoja kontejnerja</option>
+                      <option>Prevoz kontejnerja</option>
                       <option>Splošno povpraševanje</option>
                     </select>
                   </div>
