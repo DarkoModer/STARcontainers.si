@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { createClient } from '@supabase/supabase-js';
 import { cities, keywords } from './seoData';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 import {
   Sun,
   Moon,
@@ -272,12 +278,16 @@ export default function App() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     try {
-      const response = await fetch('https://skladiscko.si/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      const { data: result, error } = await supabase.functions.invoke('send-inquiry', {
+        body: formData,
       });
-      if (response.ok) {
+
+      if (error) {
+        if (error.message?.includes('429') || error.message?.includes('Preveč')) {
+          alert('Preveč zahtev. Poskusite znova čez eno minuto.');
+        }
+        setSubmitStatus('error');
+      } else if (result?.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
       } else {
@@ -1085,7 +1095,7 @@ export default function App() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1.5">
-                      Vrsta kontejnerja
+                      Vrsta povpraševanja
                     </label>
                     <select
                       name="service"
@@ -1094,15 +1104,10 @@ export default function App() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm transition-all"
                     >
                       <option value="">-- Izberite tip --</option>
-                      <option>10ft Standard</option>
-                      <option>20ft Standard</option>
-                      <option>40ft Standard</option>
-                      <option>20ft High Cube</option>
-                      <option>40ft High Cube</option>
-                      <option>Refrigerated 20ft</option>
-                      <option>Refrigerated 40ft HC</option>
-                      <option>Rabljeni kontejner</option>
-                      <option>Drugo / Svetovanje</option>
+                      <option>Nakup kontejnerja 20ft</option>
+                      <option>Nakup kontejnerja 40ft</option>
+                      <option>Prevoz</option>
+                      <option>Splošno povpraševanje</option>
                     </select>
                   </div>
                   <div>
