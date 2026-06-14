@@ -26,11 +26,23 @@ import {
   Globe,
 } from 'lucide-react';
 
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    // Takoj preveri, ali je element v viewportu (pomembno za hero sekcijo)
+    const rect = element.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isInViewport) {
+      setInView(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -40,9 +52,11 @@ function useInView(threshold = 0.15) {
       },
       { threshold }
     );
-    if (ref.current) observer.observe(ref.current);
+
+    observer.observe(element);
+
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
 
   return { ref, inView };
 }
